@@ -1,6 +1,7 @@
 import { StatusBar } from "expo-status-bar";
 import { useState } from "react";
 import { Text, View } from "react-native";
+import Header from "./components/Header";
 
 export default function App() {
   const apiKey = "6f8effcef36b38afb38fc70bbfd51996";
@@ -10,7 +11,7 @@ export default function App() {
 
   return (
     <View className="flex flex-1 justify-center items-center">
-      <Text className="font-bold text-2xl">Hello World</Text>
+      <Header />
       <StatusBar style="auto" />
     </View>
   );
