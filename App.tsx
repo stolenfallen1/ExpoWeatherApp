@@ -2,6 +2,8 @@ import { StatusBar } from "expo-status-bar";
 import { useState } from "react";
 import { Text, View } from "react-native";
 import Header from "./components/Header";
+import WeatherInfo from "./components/WeatherInfo";
+import MoreInfo from "./components/MoreInfo";
 
 export default function App() {
   const apiKey = "6f8effcef36b38afb38fc70bbfd51996";
@@ -12,6 +14,8 @@ export default function App() {
   return (
     <View className="flex flex-1 justify-center items-center">
       <Header />
+      <WeatherInfo />
+      <MoreInfo />
       <StatusBar style="auto" />
     </View>
   );
