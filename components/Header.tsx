@@ -3,7 +3,7 @@ import { Text, TextInput, View } from "react-native";
 
 const Header = () => {
   return (
-    <View>
+    <View className="flex items-center">
       <Text className="font-bold text-4xl tracking-tighter mb-3">
         Weather App
       </Text>

@@ -12,7 +12,7 @@ export default function App() {
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=${apiKey}`;
 
   return (
-    <View className="flex flex-1 justify-center items-center">
+    <View className="flex flex-1 items-center mt-40">
       <Header />
       <WeatherInfo />
       <MoreInfo />
