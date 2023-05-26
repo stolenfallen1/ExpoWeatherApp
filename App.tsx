@@ -26,14 +26,19 @@ export default function App() {
 
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=${apiKey}`;
 
-  const getLocation = (event?: any) => {
-    if (!event || event.key === "Enter") {
-      axios.get(url).then((response) => {
-        setData(response.data);
-        console.log(response.data);
-      });
-      setLocation("");
+  const getLocation = () => {
+    if (location.trim() === "") {
+      return;
     }
+
+    axios
+      .get(url)
+      .then((response) => {
+        setData(response.data);
+      })
+      .catch((error) => {
+        setData(null); // Reset the data in case of an error
+      });
   };
 
   return (
@@ -43,7 +48,7 @@ export default function App() {
         setLocation={setLocation}
         getLocation={getLocation}
       />
-      <WeatherInfo />
+      <WeatherInfo data={data} />
       <MoreInfo />
       <StatusBar style="auto" />
     </View>
