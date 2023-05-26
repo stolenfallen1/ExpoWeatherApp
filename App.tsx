@@ -31,6 +31,13 @@ export default function App() {
       return;
     }
 
+    const trimmedLocation = location.trim(); // Remove leading and trailing spaces
+
+    if (trimmedLocation !== location) {
+      setLocation(trimmedLocation); // Update the location without leading/trailing spaces
+      return; // Don't fetch data yet if there are leading/trailing spaces
+    }
+
     axios
       .get(url)
       .then((response) => {

@@ -4,7 +4,7 @@ import { Text, TextInput, View } from "react-native";
 interface HeaderProps {
   location: string;
   setLocation: (location: string) => void;
-  getLocation: () => void;
+  getLocation: (event: any) => void;
 }
 
 const Header = ({ location, setLocation, getLocation }: HeaderProps) => {
@@ -16,7 +16,7 @@ const Header = ({ location, setLocation, getLocation }: HeaderProps) => {
       <TextInput
         value={location}
         onChange={(event) => setLocation(event.nativeEvent.text)}
-        onKeyPress={getLocation}
+        onEndEditing={getLocation}
         style={{ width: 200 }}
         className="text-center text-xl border-b"
         placeholder="Search here..."
