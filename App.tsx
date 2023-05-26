@@ -49,7 +49,7 @@ export default function App() {
         getLocation={getLocation}
       />
       <WeatherInfo data={data} />
-      <MoreInfo />
+      <MoreInfo data={data} />
       <StatusBar style="auto" />
     </View>
   );
