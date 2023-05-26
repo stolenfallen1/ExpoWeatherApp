@@ -12,7 +12,7 @@ const MoreInfo = ({ data }: MoreInfoProps) => {
       <View className="flex flex-row justify-center items-center mb-40">
         <View className="mx-5 flex items-center">
           <Text className="text-2xl font-bold">
-            {data?.main.feels_like.toFixed()} &#8457;
+            {data?.main.feels_like.toFixed()} &#176;
           </Text>
           <Text className="text-xl">Feels Like</Text>
         </View>

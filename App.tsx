@@ -49,7 +49,7 @@ export default function App() {
         getLocation={getLocation}
       />
       <WeatherInfo data={data} />
-      <MoreInfo data={data} />
+      {data?.name !== undefined && <MoreInfo data={data} />}
       <StatusBar style="auto" />
     </View>
   );
