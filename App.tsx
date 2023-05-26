@@ -26,8 +26,8 @@ export default function App() {
 
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=${apiKey}`;
 
-  const getLocation = (event: any) => {
-    if (event.key === "Enter") {
+  const getLocation = (event?: any) => {
+    if (!event || event.key === "Enter") {
       axios.get(url).then((response) => {
         setData(response.data);
         console.log(response.data);
@@ -38,7 +38,11 @@ export default function App() {
 
   return (
     <View className="flex flex-1 items-center mt-40">
-      <Header />
+      <Header
+        location={location}
+        setLocation={setLocation}
+        getLocation={getLocation}
+      />
       <WeatherInfo />
       <MoreInfo />
       <StatusBar style="auto" />
